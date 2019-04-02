@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển đơn giản</title>
+</head>
+<body>
+<p>Nhập vào một từ</p>
+<input type="text" id="userIn">
+<button type="button" onclick="engToViet()">Tìm kiếm Anh -  Việt</button>
+<button type="button" onclick="vietToEng()">Tìm kiếm Việt - Anh</button>
+<script>
+    let engArr = ["house", "car", "hello", "good", "coder"];
+    let vietArr = ["ngôi nhà", "ô tô", "xin chào", "tốt", "người viết mã"];
+    function engToViet() {
+        let userInput = document.getElementById("userIn").value;
+        let check = false;
+        for (let i = 0; i < engArr.length; i++) {
+            if (userInput === engArr[i]) {
+                alert("Từ bạn nhập có nghĩa là " + vietArr[i]);
+                check = true;
+            }
+        }
+        if (check == false) {
+            alert("Không tìm thấy từ của bạn");
+        }
+    }
+    function vietToEng() {
+        let userInput = document.getElementById("userIn").value;
+        let check = false;
+        for (let i = 0; i < vietArr.length; i++) {
+            if (userInput === vietArr[i]) {
+                alert("Từ bạn nhập có nghĩa là " + engArr[i]);
+                check = true;
+            }
+        }
+        if (check == false) {
+            alert("Không tìm thấy từ của bạn");
+        }
+    }
+</script>
+</body>
+</html>
